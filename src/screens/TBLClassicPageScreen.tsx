@@ -109,61 +109,6 @@ const TBLClassicPageScreen = () => {
     }
   }, [tblClassicPage]);
 
-  const applyTemplateSettings = useCallback(() => {
-    if (!tblClassicUnitController) {
-      Alert.alert('Error', 'Unit controller not available yet');
-      return;
-    }
-
-    // Apply TemplateJS settings using taboolaState
-    if (taboolaState.disableTRCCache) {
-      tblClassicUnitController.templateJS?.disableTRCCache();
-      console.log('Applied disableTRCCache');
-    }
-
-    if (taboolaState.queryKey && taboolaState.queryValue) {
-      tblClassicUnitController.templateJS?.addCustomQueryParams(
-        taboolaState.queryKey,
-        taboolaState.queryValue
-      );
-      console.log('Applied custom query params:', {
-        queryKey: taboolaState.queryKey,
-        queryValue: taboolaState.queryValue,
-      });
-    }
-
-    if (taboolaState.requestCampaigns.length > 0) {
-      tblClassicUnitController.templateJS?.requestCampaigns(
-        ...taboolaState.requestCampaigns
-      );
-      console.log('Applied request campaigns:', taboolaState.requestCampaigns);
-    }
-
-    if (taboolaState.requestGeo) {
-      tblClassicUnitController.templateJS?.requestGeo(taboolaState.requestGeo);
-      console.log('Applied request geo:', taboolaState.requestGeo);
-    }
-
-    if (taboolaState.specificTRCServer) {
-      tblClassicUnitController.templateJS?.setSpecificTRCServer(
-        taboolaState.specificTRCServer
-      );
-      console.log(
-        'Applied specific TRC server:',
-        taboolaState.specificTRCServer
-      );
-    }
-
-    if (taboolaState.videoCampaignFormat) {
-      tblClassicUnitController.templateJS?.setVideoCampaignFormat(
-        taboolaState.videoCampaignFormat
-      );
-      console.log(
-        'Applied video campaign format:',
-        taboolaState.videoCampaignFormat
-      );
-    }
-  }, [tblClassicUnitController, taboolaState]);
 
   const fetchContent = useCallback(() => {
     if (!tblClassicUnitController) {
@@ -188,7 +133,6 @@ const TBLClassicPageScreen = () => {
           state={taboolaState}
           actions={taboolaActions}
           showPageSettings={true}
-          showTemplateSettings={true}
         />
 
         {/* Action Buttons Section */}
@@ -218,22 +162,12 @@ const TBLClassicPageScreen = () => {
             />
           </View>
 
-          {/* Step 3: Apply Template Settings */}
-          {tblClassicUnitController && (
-            <View style={styles.buttonContainer}>
-              <Button
-                title="3. Apply Template Settings"
-                onPress={applyTemplateSettings}
-                color="#f39c12"
-              />
-            </View>
-          )}
 
           {/* Step 4: Fetch Content */}
           {tblClassicUnitController && (
             <View style={styles.buttonContainer}>
               <Button
-                title="4. Fetch Content"
+                title="3. Fetch Content"
                 onPress={fetchContent}
                 color="#27ae60"
               />
