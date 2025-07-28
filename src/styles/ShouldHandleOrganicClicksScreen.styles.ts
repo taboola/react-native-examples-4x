@@ -36,6 +36,7 @@ export const styles = StyleSheet.create({
     padding: LAYOUT.PADDING,
   },
   taboolaContainer: {
+    flex: 1,
     marginTop: 20,
     backgroundColor: COLORS.TABOOLA_CONTAINER_BG,
     padding: 15,

@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useEffect } from 'react';
+import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import TaboolaFeedScreen from '../screens/TaboolaFeedScreen';
 import HomeScreen from '../screens/HomeScreen';
