@@ -28,7 +28,7 @@ interface UnitSettingsActions {
   setExtraPropertiesValue: (value: string) => void;
 }
 
-interface UnitSettingsFormProps {
+interface TaboolaUnitSettingsFormProps {
   title: string;
   state: UnitSettingsState;
   actions: UnitSettingsActions;
@@ -38,7 +38,11 @@ interface UnitSettingsFormProps {
   onReset: () => void;
 }
 
-export const UnitSettingsForm: React.FC<UnitSettingsFormProps> = ({
+/**
+ * Form component for configuring TBLClassicUnitController settings.
+ * Allows dynamic modification of unit properties and content management.
+ */
+export const TaboolaUnitSettingsForm: React.FC<TaboolaUnitSettingsFormProps> = ({
   title,
   state,
   actions,

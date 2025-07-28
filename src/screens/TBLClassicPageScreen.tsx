@@ -15,7 +15,7 @@ import {
 } from '../utils/constants';
 import { styles } from '../styles/TemplateJsScreen.styles';
 import { useTaboolaApiState } from '../hooks/useTaboolaApiState';
-import { TaboolaSettingsForm } from '../components/TaboolaSettingsForm';
+import { TaboolaPageSettingsForm } from '../components/TaboolaPageSettingsForm.tsx';
 import { useTaboolaCleanup } from '../hooks/useTaboolaCleanup';
 
 
@@ -35,8 +35,10 @@ const TBLClassicPageScreen = () => {
   >(undefined);
   const [showUnit, setShowUnit] = useState(false);
 
-  // Use the custom hook for ALL Taboola API state - no duplicate state!
+
+  // Hook for managing Taboola API configuration state and actions
   const [taboolaState, taboolaActions] = useTaboolaApiState();
+
 
   useTaboolaCleanup(tblClassicPage);
 
@@ -45,22 +47,18 @@ const TBLClassicPageScreen = () => {
     if (Platform.OS === 'android') {
       if (taboolaState.publisher) {
         tblClassicPage.setPublisher(taboolaState.publisher);
-        console.log('Applied publisher:', taboolaState.publisher);
       }
 
       if (taboolaState.pageType) {
         tblClassicPage.setPageType(taboolaState.pageType);
-        console.log('Applied pageType:', taboolaState.pageType);
       }
 
       if (taboolaState.targetType) {
         tblClassicPage.setTargetType(taboolaState.targetType);
-        console.log('Applied targetType:', taboolaState.targetType);
       }
 
       if (taboolaState.pageUrl) {
         tblClassicPage.setPageUrl(taboolaState.pageUrl);
-        console.log('Applied pageUrl:', taboolaState.pageUrl);
       }
     }
 
@@ -69,7 +67,6 @@ const TBLClassicPageScreen = () => {
       const timeout = parseInt(taboolaState.serialFetchTimeout, 10);
       if (!isNaN(timeout)) {
         tblClassicPage.setSerialFetchTimeout(timeout);
-        console.log('Applied serialFetchTimeout:', timeout);
       }
     }
 
@@ -78,7 +75,6 @@ const TBLClassicPageScreen = () => {
         [taboolaState.extraPropertiesKey]: taboolaState.extraPropertiesValue,
       };
       tblClassicPage.setPageExtraProperties(extraProperties);
-      console.log('Applied extraProperties:', extraProperties);
     }
   }, [tblClassicPage, taboolaState]);
 
@@ -86,13 +82,6 @@ const TBLClassicPageScreen = () => {
     try {
       const { placement, mode, placementType } =
         PLACEMENT_PARAMS.DARK_MODE_1X2_WIDGET;
-
-      console.log('Creating unit with params:', {
-        placement,
-        mode,
-        placementType,
-      });
-
       const createdUnit = await tblClassicPage.buildUnit(
         placement,
         mode,
@@ -102,10 +91,8 @@ const TBLClassicPageScreen = () => {
 
       setTblClassicUnitController(createdUnit);
       Alert.alert('Success', 'Unit created successfully');
-      console.log('Unit created successfully:', createdUnit);
     } catch (error) {
       Alert.alert('Error', `Failed to create unit: ${error}`);
-      console.error('Failed to create unit:', error);
     }
   }, [tblClassicPage]);
 
@@ -129,7 +116,7 @@ const TBLClassicPageScreen = () => {
       >
         <Text style={styles.title}>{MESSAGES.TBL_CLASSIC_PAGE_WELCOME}</Text>
 
-        <TaboolaSettingsForm
+        <TaboolaPageSettingsForm
           state={taboolaState}
           actions={taboolaActions}
           showPageSettings={true}

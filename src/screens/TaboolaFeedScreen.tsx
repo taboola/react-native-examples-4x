@@ -26,7 +26,7 @@ import {
   PUBLISHERS_PROPERTY,
   TABOOLA_SECTION_TITLE,
 } from '../utils/constants';
-import { UnitSettingsForm } from '../components/UnitSettingsForm';
+import { TaboolaUnitSettingsForm } from '../components/TaboolaUnitSettingsForm.tsx';
 import { useTaboolaCleanup } from '../hooks/useTaboolaCleanup';
 import {PLATFORMS} from "../platfroms.ts";
 
@@ -84,21 +84,17 @@ function TaboolaFeedScreen() {
     if (Platform.OS === PLATFORMS.ANDROID) {
       if (widgetPublisher) {
         widgetUnit.setPublisherName(widgetPublisher);
-        console.log('[Widget] Applied publisher:', widgetPublisher);
       }
       if (widgetPageType) {
         widgetUnit.setPageType(widgetPageType);
-        console.log('[Widget] Applied pageType:', widgetPageType);
       }
 
       if (widgetTargetType) {
         widgetUnit.setTargetType(widgetTargetType);
-        console.log('[Widget] Applied targetType:', widgetTargetType);
       }
 
       if (widgetPageUrl) {
         widgetUnit.setPageUrl(widgetPageUrl);
-        console.log('[Widget] Applied pageUrl:', widgetPageUrl);
       }
     }
 
@@ -108,7 +104,6 @@ function TaboolaFeedScreen() {
         [widgetExtraPropertiesKey]: widgetExtraPropertiesValue,
       };
       widgetUnit.setUnitExtraProperties(extraProperties);
-      console.log('[Widget] Applied extraProperties:', extraProperties);
     }
   }, [
     widgetUnit,
@@ -131,22 +126,18 @@ function TaboolaFeedScreen() {
     if (Platform.OS === PLATFORMS.ANDROID) {
       if (feedPublisher) {
         feedUnit.setPublisherName(feedPublisher);
-        console.log('[Feed] Applied publisher:', feedPublisher);
       }
 
       if (feedPageType) {
         feedUnit.setPageType(feedPageType);
-        console.log('[Feed] Applied pageType:', feedPageType);
       }
 
       if (feedTargetType) {
         feedUnit.setTargetType(feedTargetType);
-        console.log('[Feed] Applied targetType:', feedTargetType);
       }
 
       if (feedPageUrl) {
         feedUnit.setPageUrl(feedPageUrl);
-        console.log('[Feed] Applied pageUrl:', feedPageUrl);
       }
     }
 
@@ -156,7 +147,6 @@ function TaboolaFeedScreen() {
         [feedExtraPropertiesKey]: feedExtraPropertiesValue,
       };
       feedUnit.setUnitExtraProperties(extraProperties);
-      console.log('[Feed] Applied extraProperties:', extraProperties);
     }
   }, [
     feedUnit,
@@ -280,7 +270,7 @@ function TaboolaFeedScreen() {
     <View style={baseStyles.flex}>
       <ScrollView style={baseStyles.flex}>
         {renderControlButtons()}
-        <UnitSettingsForm
+        <TaboolaUnitSettingsForm
           title="Widget Unit Controls"
           state={widgetUnitState}
           actions={widgetUnitActions}
@@ -290,7 +280,7 @@ function TaboolaFeedScreen() {
           onReset={() => widgetUnit?.reset()}
         />
         Feed Unit Controls
-        <UnitSettingsForm
+        <TaboolaUnitSettingsForm
           title="Feed Unit Controls"
           state={feedUnitState}
           actions={feedUnitActions}

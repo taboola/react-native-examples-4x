@@ -19,10 +19,24 @@ import { useTaboolaCleanup } from '../hooks/useTaboolaCleanup';
 
 const SDK_TESTER_PUBLISHER = PUBLISHERS_PROPERTY[PublisherName.SDK_TESTER_RND];
 
+/**
+ * Screen demonstrating organic clicks handling control.
+ * Publishers can toggle organic clicks handling by calling:
+ * tblClassicUnitController?.setShouldHandleOrganicClicks(boolean)
+ * 
+ * Taboola Integration Steps:
+ * 1. Create TBLClassicPage with Taboola.getClassicPage(pageUrl, pageType)
+ * 2. Create unit controller using useCreateUnit hook with page + placement params
+ *    - TBLClassicUnitController preloads ad content in background
+ * 3. Render TBLClassicUnit component with page and controller
+ *    - JSX connects the preloaded unit data to the UI display
+ * 4. Use controller methods to manage content and behavior
+ */
 function ShouldHandleOrganicClicksScreen() {
   const [shouldHandleOrganicClicks, setShouldHandleOrganicClicks] =
     useState(true);
 
+  // Step 1: Create TBLClassicPage
   const tblClassicPage = useMemo(
     () =>
       Taboola.getClassicPage(
@@ -33,12 +47,14 @@ function ShouldHandleOrganicClicksScreen() {
   );
   useTaboolaCleanup(tblClassicPage)
 
+  // Step 2: Create unit controller
   const { tblClassicUnitController } = useCreateUnit({
     tblClassicPage,
     ...PLACEMENT_PARAMS.DARK_MODE_1X2_WIDGET,
     tblClassicListener: classicListeners,
   });
 
+  // Step 4: Use controller methods
   const handleOrganicClicksToggle = useCallback(() => {
     setShouldHandleOrganicClicks((prevState) => {
       const updatedState = !prevState;
@@ -64,6 +80,7 @@ function ShouldHandleOrganicClicksScreen() {
           <Text style={styles.sectionTitle}>
             {TABOOLA_SECTION_TITLE} - Test Unit
           </Text>
+          {/* Step 3: Render TBLClassicUnit */}
           <TBLClassicUnit
             tblClassicPage={tblClassicPage}
             tblClassicUnitController={tblClassicUnitController}

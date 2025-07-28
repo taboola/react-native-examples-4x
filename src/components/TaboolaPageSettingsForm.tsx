@@ -9,7 +9,7 @@ import type {
 } from '../hooks/useTaboolaApiState';
 import {SUPPORTED_PLATFORMS} from "../platfroms.ts";
 
-interface TaboolaSettingsFormProps {
+interface TaboolaPageSettingsFormProps {
   state: TaboolaApiState;
   actions: TaboolaApiActions;
   showPageSettings?: boolean;
@@ -17,7 +17,11 @@ interface TaboolaSettingsFormProps {
   title?: string;
 }
 
-export const TaboolaSettingsForm: React.FC<TaboolaSettingsFormProps> = ({
+/**
+ * Form component for configuring TBLClassicPage settings.
+ * Contains page-level configurations needed before creating Taboola classic units.
+ */
+export const TaboolaPageSettingsForm: React.FC<TaboolaPageSettingsFormProps> = ({
   state,
   actions,
   showPageSettings = true,

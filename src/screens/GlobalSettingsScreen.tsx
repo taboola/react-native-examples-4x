@@ -110,7 +110,6 @@ const GlobalSettingsScreen: React.FC = () => {
     try {
       // Apply log level
       Taboola.setLogLevel(selectedLogLevel);
-      console.log(`${MESSAGES.APPLIED_LOG_LEVEL}`, selectedLogLevel);
 
       // Collect all properties to apply
       const allProperties: Record<string, string> = {};
@@ -139,7 +138,6 @@ const GlobalSettingsScreen: React.FC = () => {
       // Apply all properties if any exist
       if (Object.keys(allProperties).length > 0) {
         Taboola.setGlobalExtraProperties(allProperties);
-        console.log(`${MESSAGES.APPLIED_EXTRA_PROPERTIES}`, allProperties);
       }
 
       // Get enabled property keys
