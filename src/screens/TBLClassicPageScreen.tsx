@@ -29,14 +29,11 @@ const TBLClassicPageScreen = () => {
     )
   );
 
-  // Unit controller state
   const [tblClassicUnitController, setTblClassicUnitController] = useState<
     any | undefined
   >(undefined);
   const [showUnit, setShowUnit] = useState(false);
 
-
-  // Hook for managing Taboola API configuration state and actions
   const [taboolaState, taboolaActions] = useTaboolaApiState();
 
 

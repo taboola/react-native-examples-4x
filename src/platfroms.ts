@@ -1,7 +1,7 @@
 export const PLATFORMS = {
     ANDROID: 'android',
     IOS: 'ios',
-} as const;
+} ;
 
 export const SUPPORTED_PLATFORMS = {
     ANDROID_ONLY: [PLATFORMS.ANDROID] as const,

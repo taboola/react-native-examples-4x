@@ -4,14 +4,14 @@ import type { ReactNode } from 'react';
 
 interface PlatformSupportedFieldProps {
   children: ReactNode;
-  supportedPlatforms: readonly ('android' | 'ios')[];
+  supportedPlatforms: readonly string[];
 }
 
 export const PlatformSupportedField: React.FC<PlatformSupportedFieldProps> = ({
   children,
   supportedPlatforms,
 }) => {
-  const currentPlatform = Platform.OS as 'android' | 'ios';
+  const currentPlatform = Platform.OS;
 
   // Only render if current platform is in the supported platforms array
   if (supportedPlatforms.includes(currentPlatform)) {
