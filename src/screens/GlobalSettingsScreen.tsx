@@ -47,6 +47,17 @@ const IOS_PROPERTIES = [
 
 type PropertyType = typeof PROPERTY_TYPES.COMMON | typeof PROPERTY_TYPES.IOS;
 
+/**
+ * GlobalSettingsScreen - React Native screen component for configuring Taboola SDK global settings
+ *
+ * This screen provides a comprehensive interface for managing Taboola SDK global configurations including:
+ * - Setting log levels for debugging and monitoring
+ * - Configuring predefined extra properties (common and iOS-specific)
+ * - Adding custom extra properties with key-value pairs
+ * - Platform-specific UI adaptations (iOS ActionSheet vs Android Picker)
+ * - Real-time preview of custom property configurations
+ * - Applying all settings to the Taboola SDK via setGlobalExtraProperties
+ */
 const GlobalSettingsScreen: React.FC = () => {
   const [selectedLogLevel, setSelectedLogLevel] = useState<TBLLogLevel>(
     TBLLogLevel.INFO

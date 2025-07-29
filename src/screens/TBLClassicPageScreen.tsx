@@ -20,7 +20,16 @@ import { useTaboolaCleanup } from '../hooks/useTaboolaCleanup';
 
 
 const SDK_TESTER_PUBLISHER = PUBLISHERS_PROPERTY[PublisherName.SDK_TESTER_RND];
-
+/**
+ * TBLClassicPageScreen - React Native screen component that demonstrates the TBLClassicPage API
+ *
+ * This screen provides a complete example of how to use Taboola's TBLClassicPage API including:
+ * - Creating and configuring a classic page instance
+ * - Building and managing classic units
+ * - Applying page settings and fetching content
+ * - Handling platform-specific functionality (Android vs iOS)
+ * - Displaying Taboola content units with proper lifecycle management
+ */
 const TBLClassicPageScreen = () => {
   const [tblClassicPage] = useState(() =>
     Taboola.getClassicPage(

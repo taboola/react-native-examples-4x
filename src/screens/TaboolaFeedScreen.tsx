@@ -32,6 +32,9 @@ import {PLATFORMS} from "../platfroms.ts";
 
 const SDK_TESTER_PUBLISHER = PUBLISHERS_PROPERTY[PublisherName.SDK_TESTER_RND];
 
+/**
+ * TaboolaFeedScreen - React Native screen component that demonstrates combined Widget and Feed integration
+ */
 function TaboolaFeedScreen() {
   const [tblClassicPage] = useState(() =>
     Taboola.getClassicPage(
