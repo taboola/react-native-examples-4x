@@ -1,97 +1,121 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Taboola React Native Plugin 4.x - Sample App
 
-# Getting Started
+This sample app demonstrates how to integrate **Taboola recommendations** into your React Native application using the **Taboola React Native Plugin 4.x**.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## Overview
 
-## Step 1: Start Metro
+The **Taboola React Native Plugin 4.x** introduces full support for the **React Native New Architecture** (TurboModules and Fabric) and provides a more robust, flexible API with separated data-fetching and UI rendering logic.
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## What's New in 4.x
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+- ✅ **Full React Native New Architecture support** (TurboModules & Fabric)
+- ✅ **Separated data fetching and UI rendering** for better control
+- ✅ **Hook-based API** with `useCreateUnit`
+- ✅ **Improved TypeScript support** and type safety
+- ✅ **Better memory management** with explicit cleanup
+- ✅ **Multiple units per screen** support
 
-```sh
-# Using npm
-npm start
+## Sample App Features
 
-# OR using Yarn
-yarn start
+This sample app showcases:
+- Multiple integration patterns (Feed, Widget, Classic Page)
+- Custom click handling and organic content management
+- Dark mode configuration
+- Memory management best practices
+- React Native New Architecture compatibility
+
+## Prerequisites
+
+Before running the sample app, make sure you have:
+
+- **React Native development environment** set up ([Setup Guide](https://reactnative.dev/docs/set-up-your-environment))
+- **Node.js** (version 18 or higher)
+- **iOS**: Xcode and CocoaPods installed
+- **Android**: Android Studio and SDK configured
+
+## Quick Start
+
+### 1. Clone and Install Dependencies
+
+```bash
+# Navigate to the sample app directory
+cd react-native-examples-4x
+
+# Install npm dependencies
+npm install
+
+# Install iOS dependencies (iOS only)
+cd ios && bundle exec pod install && cd ..
 ```
 
-## Step 2: Build and run your app
+### 2. Run the Sample App
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
+#### iOS
+```bash
 npm run ios
-
-# OR using Yarn
-yarn ios
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+#### Android
+```bash
+npm run android
+```
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+## Integration Documentation
 
-## Step 3: Modify your app
+For complete integration instructions, API reference, and configuration options, visit the **Taboola Dev Center**:
 
-Now that you have successfully run the app, let's make changes!
+📚 **[React Native Plugin 4.x Documentation](https://developers.taboola.com/taboolasdk/docs/react-native-plugin)**
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+The documentation includes:
+- Step-by-step integration guide
+- API reference and configuration options
+- GDPR/CCPA compliance
+- Troubleshooting and best practices
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+## Migrating from 3.x?  
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+For a detailed migration guide, visit the **Taboola Dev Center**:
 
-## Congratulations! :tada:
+📚 **[Migration Documentation](https://developers.taboola.com/taboolasdk/docs/react-native-migration)**.
 
-You've successfully run and modified your React Native App. :partying_face:
+## Sample Features
 
-### Now what?
+The app includes several screens demonstrating different integration patterns:
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+### 🔥 **Feed Integration** (`TaboolaFeedScreen.tsx`)
+- Endless scrolling feed implementation
+- Multiple unit types on the same screen
+- Content fetching and memory management
 
-# Troubleshooting
+### 📄 **Classic Page** (`TBLClassicPageScreen.tsx`)
+- Widget placements within content
+- Page-level configuration examples
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+### 🎯 **Custom Click Handling** (`ShouldHandleOrganicClicksScreen.tsx`)
+- Intercepting organic content clicks
+- Custom navigation for internal content
 
-# Learn More
+### ⚙️ **Global Settings** (`GlobalSettingsScreen.tsx`)
+- Dark mode configuration
+- Extra properties and advanced options
+- Dynamic placement configuration
 
-To learn more about React Native, take a look at the following resources:
+## Key Files to Examine
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+| File | Purpose |
+|------|---------|
+| `src/screens/TaboolaFeedScreen.tsx` | Complete feed implementation with multiple units |
+| `src/screens/TBLClassicPageScreen.tsx` | Widget integration within content |
+| `src/screens/ShouldHandleOrganicClicksScreen.tsx` | Custom click handling patterns |
+| `src/screens/GlobalSettingsScreen.tsx` | Configuration and settings examples |
+| `src/App.tsx` | Application entry point and Taboola initialization |
+
+## Support
+
+- 📖 **Documentation**: [Taboola Developer Center](https://developers.taboola.com/taboolasdk/)
+- 💬 **Support Forum**: [Ask questions and get help](https://sdk.taboola.com/taboolasdk/discuss)
+- 📧 **Contact**: Reach out to your Taboola Account Manager
+
+## License
+
+This sample app is provided for demonstration purposes. See the [Taboola SDK License](https://developers.taboola.com/taboolasdk/docs/license) for SDK usage terms. 
