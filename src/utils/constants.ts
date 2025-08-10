@@ -40,6 +40,11 @@ export const LAYOUT = {
   INPUT_MARGIN: 16,
   PREVIEW_MARGIN: 16,
   APPLY_BUTTON_MARGIN: 32,
+  TEXT_MARGIN_BOTTOM: 10,
+  SWITCH_MARGIN_RIGHT: 10,
+  STEP_TITLE_MARGIN_BOTTOM: 5,
+  STEP_CONTAINER_MARGIN: 15,
+  STEP_CONTAINER_PADDING: 10,
 };
 
 // Typography
@@ -52,6 +57,8 @@ export const TYPOGRAPHY = {
   APPLY_BUTTON_SIZE: 18,
   PLATFORM_LABEL_SIZE: 12,
   ARROW_SIZE: 12,
+  STEP_TITLE_SIZE: 16,
+  INSTRUCTION_SIZE: 12,
 };
 
 // Opacity values
@@ -66,6 +73,7 @@ export const SCREENS = {
   TBLClassicPage: 'TBLClassicPage',
   SHOULD_HANDLE_ORGANIC_CLICKS_SCREEN: 'ShouldHandleOrganicClicksScreen',
   GLOBAL_SETTINGS: 'GlobalSettings',
+  DARK_MODE: 'Dark Mode',
 };
 
 export const SCREEN_TITLES = {
@@ -75,6 +83,7 @@ export const SCREEN_TITLES = {
   TBLClassicPage: 'TBLClassicPage screen',
   SHOULD_HANDLE_ORGANIC_CLICKS_SCREEN: 'Should Handle OC Screen',
   GLOBAL_SETTINGS: 'Global Settings Screen',
+  DARK_MODE: 'Dark Mode Screen',
 };
 
 export const PLACEMENT_PARAMS = {
@@ -163,6 +172,12 @@ export const MESSAGES = {
   LOG_LEVEL_LABEL: 'Log Level:',
   PICKER_DROPDOWN_COLOR: '#666',
   DROPDOWN_ARROW: '▼',
+  CREATE_UNIT: 'Create Unit',
+  SWITCH_DARK_MODE: 'Switch dark mode',
+  DARK_MODE_INSTRUCTION: ' Toggle to test dark/light mode content rendering (setPageExtraProperties)',
+  CREATE_UNIT_INSTRUCTION: ' Click to initialize Taboola unit with current settings',
+  FETCH_CONTENT_INSTRUCTION: ' Click to load and display Taboola content (requires unit creation first)',
+  UNIT_CONTROLLER_NOT_AVAILABLE: 'Unit controller not available yet',
 };
 
 export const EXTRA_PROPERTY_LABELS = {
