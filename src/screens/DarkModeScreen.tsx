@@ -15,6 +15,7 @@ import {
   PublisherName,
   PUBLISHERS_PROPERTY,
   TYPOGRAPHY,
+  PARAGRAPHS,
 } from '../utils/constants.ts';
 
 import {useTaboolaCleanup} from '../hooks/useTaboolaCleanup.ts';
@@ -45,7 +46,7 @@ const DarkModeScreen = () => {
     [],
   );
 
-  const [isDarkMode, setIsDarMode] = useState<boolean>(false);
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
   const [tblClassicUnitController, setTblClassicUnitController] = useState<
     any | undefined
   >(undefined);
@@ -100,7 +101,7 @@ const DarkModeScreen = () => {
       },
     });
 
-  const dynamicStyles = createDynamicStyles(colors);
+  const dynamicStyles = useMemo(() => createDynamicStyles(colors), [colors]);
 
   return (
     <ScrollView
@@ -119,7 +120,7 @@ const DarkModeScreen = () => {
           </Text>
           <Switch
             value={isDarkMode}
-            onValueChange={() => setIsDarMode(prevState => !prevState)}
+            onValueChange={() => setIsDarkMode(prevState => !prevState)}
             trackColor={{
               false: COLORS.SWITCH_TRACK_FALSE,
               true: COLORS.SWITCH_TRACK_TRUE,
@@ -160,55 +161,11 @@ const DarkModeScreen = () => {
       </View>
 
       <Text style={dynamicStyles.contentText}>
-        Ut aliquam arcu in libero dictum tincidunt. Nullam venenatis augue
-        turpis, sit amet hendrerit mauris pharetra sed. Fusce sodales rhoncus
-        ipsum ut rhoncus. Donec id nulla vitae tellus mattis eleifend. Integer
-        nec tortor augue. Vivamus leo lorem, dictum nec cursus vitae, congue sed
-        purus. Quisque eget fringilla diam. Aenean sollicitudin magna quis
-        pellentesque fringilla. Praesent a neque congue, tincidunt lacus id,
-        congue ligula. Nulla facilisi. Sed bibendum orci id ipsum dignissim
-        placerat. Aliquam vel tincidunt ligula. Donec id augue egestas,
-        porttitor neque eu, imperdiet nulla. Vestibulum ante ipsum primis in
-        faucibus orci luctus et ultrices posuere cubilia curae;
+        {PARAGRAPHS.P1}
       </Text>
 
       <Text style={dynamicStyles.contentText}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut augue
-        maximus, sagittis eros vel, dictum dui. Proin nibh odio, varius eu
-        interdum sed, porta non massa. Cras mattis, risus non porttitor
-        dignissim, erat lacus gravida lorem, quis egestas ligula eros placerat
-        lacus. Phasellus viverra egestas justo, a sagittis ante gravida vitae.
-        Proin pharetra ante ac arcu porttitor, at lacinia est aliquet. Maecenas
-        nisl urna, ultricies vitae mattis quis, cursus sed lorem. Quisque
-        malesuada nec magna sit amet molestie. Praesent mi lacus, mollis sit
-        amet suscipit et, gravida at ipsum. Vestibulum vestibulum efficitur
-        neque, at auctor orci viverra ut. Maecenas enim metus, gravida vitae
-        tempor ut, interdum ac sapien. Sed vel eros ut quam vulputate sagittis.
-        Pellentesque consectetur quis ligula a condimentum. Sed vitae nunc
-        cursus, pretium sem vel, consectetur lorem. In hac habitasse platea
-        dictumst. Aliquam placerat ex cursus, dictum mi eget, ultrices nulla. In
-        lacinia id lorem at malesuada. Praesent fermentum nec nisl eu pretium.
-        Vestibulum nec dolor pretium nunc cursus tempus. Fusce congue magna
-        quam, id pulvinar felis mollis tincidunt. Nullam ornare ut ante non
-        tempor. Cras eget neque odio. Donec pretium dignissim mauris, sit amet
-        pharetra massa mollis in. Proin nibh libero, malesuada vitae ipsum eget,
-        pellentesque maximus est. Nunc ex lacus, sagittis eu molestie sit amet,
-        mattis vel justo. Etiam sit amet varius ligula, ut consequat elit. Nam
-        ullamcorper nunc at mi porttitor vulputate. Vivamus dapibus felis
-        tincidunt convallis lacinia. Cras ornare dapibus fringilla. Nam
-        pellentesque pharetra enim non pharetra. Integer tristique egestas
-        risus, vel imperdiet massa aliquet nec. Suspendisse ultricies diam id
-        neque hendrerit, sed interdum eros laoreet. Sed eros sem, volutpat quis
-        posuere non, efficitur sed sem. In nec sapien quis ante blandit ornare.
-        Aenean volutpat hendrerit mauris non lacinia. Curabitur vitae
-        ullamcorper est, ac tincidunt augue. Praesent ultrices vulputate ante,
-        vel egestas orci dictum quis. Ut rutrum erat dui, ac hendrerit nulla
-        scelerisque a. Aliquam leo velit, suscipit quis fermentum vel, gravida
-        eu nunc. Curabitur convallis, augue gravida posuere elementum, risus
-        metus posuere diam, id cursus eros purus ac turpis. Nullam nec mi
-        turpis. Fusce et lobortis libero. Vestibulum ante ipsum primis in
-        faucibus orci luctus et ultrices posuere cubilia curae; Nam feugiat
-        faucibus interdum.
+        {PARAGRAPHS.P2}
       </Text>
 
       {tblClassicUnitController && (
