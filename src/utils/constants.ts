@@ -40,6 +40,11 @@ export const LAYOUT = {
   INPUT_MARGIN: 16,
   PREVIEW_MARGIN: 16,
   APPLY_BUTTON_MARGIN: 32,
+  TEXT_MARGIN_BOTTOM: 10,
+  SWITCH_MARGIN_RIGHT: 10,
+  STEP_TITLE_MARGIN_BOTTOM: 5,
+  STEP_CONTAINER_MARGIN: 15,
+  STEP_CONTAINER_PADDING: 10,
 };
 
 // Typography
@@ -52,6 +57,8 @@ export const TYPOGRAPHY = {
   APPLY_BUTTON_SIZE: 18,
   PLATFORM_LABEL_SIZE: 12,
   ARROW_SIZE: 12,
+  STEP_TITLE_SIZE: 16,
+  INSTRUCTION_SIZE: 12,
 };
 
 // Opacity values
@@ -66,6 +73,7 @@ export const SCREENS = {
   TBLClassicPage: 'TBLClassicPage',
   SHOULD_HANDLE_ORGANIC_CLICKS_SCREEN: 'ShouldHandleOrganicClicksScreen',
   GLOBAL_SETTINGS: 'GlobalSettings',
+  DARK_MODE: 'Dark Mode',
 };
 
 export const SCREEN_TITLES = {
@@ -75,6 +83,7 @@ export const SCREEN_TITLES = {
   TBLClassicPage: 'TBLClassicPage screen',
   SHOULD_HANDLE_ORGANIC_CLICKS_SCREEN: 'Should Handle OC Screen',
   GLOBAL_SETTINGS: 'Global Settings Screen',
+  DARK_MODE: 'Dark Mode Screen',
 };
 
 export const PLACEMENT_PARAMS = {
@@ -163,6 +172,12 @@ export const MESSAGES = {
   LOG_LEVEL_LABEL: 'Log Level:',
   PICKER_DROPDOWN_COLOR: '#666',
   DROPDOWN_ARROW: '▼',
+  CREATE_UNIT: 'Create Unit',
+  SWITCH_DARK_MODE: 'Switch dark mode',
+  DARK_MODE_INSTRUCTION: ' Toggle to test dark/light mode content rendering (setPageExtraProperties)',
+  CREATE_UNIT_INSTRUCTION: ' Click to initialize Taboola unit with current settings',
+  FETCH_CONTENT_INSTRUCTION: ' Click to load and display Taboola content (requires unit creation first)',
+  UNIT_CONTROLLER_NOT_AVAILABLE: 'Unit controller not available yet',
 };
 
 export const EXTRA_PROPERTY_LABELS = {
@@ -190,4 +205,11 @@ export const isIOS = (): boolean => Platform.OS === 'ios';
 export const PROPERTY_TYPES = {
   COMMON: 'common',
   IOS: 'ios',
+} as const;
+
+export const PARAGRAPHS = {
+  P1:
+    'Ut aliquam arcu in libero dictum tincidunt. Nullam venenatis augue turpis, sit amet hendrerit mauris pharetra sed. Fusce sodales rhoncus ipsum ut rhoncus. Donec id nulla vitae tellus mattis eleifend. Integer nec tortor augue. Vivamus leo lorem, dictum nec cursus vitae, congue sed purus. Quisque eget fringilla diam. Aenean sollicitudin magna quis pellentesque fringilla. Praesent a neque congue, tincidunt lacus id, congue ligula. Nulla facilisi. Sed bibendum orci id ipsum dignissim placerat. Aliquam vel tincidunt ligula. Donec id augue egestas, porttitor neque eu, imperdiet nulla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;',
+  P2:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut augue maximus, sagittis eros vel, dictum dui. Proin nibh odio, varius eu interdum sed, porta non massa. Cras mattis, risus non porttitor dignissim, erat lacus gravida lorem, quis egestas ligula eros placerat lacus. Phasellus viverra egestas justo, a sagittis ante gravida vitae. Proin pharetra ante ac arcu porttitor, at lacinia est aliquet. Maecenas nisl urna, ultricies vitae mattis quis, cursus sed lorem. Quisque malesuada nec magna sit amet molestie. Praesent mi lacus, mollis sit amet suscipit et, gravida at ipsum. Vestibulum vestibulum efficitur neque, at auctor orci viverra ut. Maecenas enim metus, gravida vitae tempor ut, interdum ac sapien. Sed vel eros ut quam vulputate sagittis. Pellentesque consectetur quis ligula a condimentum. Sed vitae nunc cursus, pretium sem vel, consectetur lorem. In hac habitasse platea dictumst. Aliquam placerat ex cursus, dictum mi eget, ultrices nulla. In lacinia id lorem at malesuada. Praesent fermentum nec nisl eu pretium. Vestibulum nec dolor pretium nunc cursus tempus. Fusce congue magna quam, id pulvinar felis mollis tincidunt. Nullam ornare ut ante non tempor. Cras eget neque odio. Donec pretium dignissim mauris, sit amet pharetra massa mollis in. Proin nibh libero, malesuada vitae ipsum eget, pellentesque maximus est. Nunc ex lacus, sagittis eu molestie sit amet, mattis vel justo. Etiam sit amet varius ligula, ut consequat elit. Nam ullamcorper nunc at mi porttitor vulputate. Vivamus dapibus felis tincidunt convallis lacinia. Cras ornare dapibus fringilla. Nam pellentesque pharetra enim non pharetra. Integer tristique egestas risus, vel imperdiet massa aliquet nec. Suspendisse ultricies diam id neque hendrerit, sed interdum eros laoreet. Sed eros sem, volutpat quis posuere non, efficitur sed sem. In nec sapien quis ante blandit ornare. Aenean volutpat hendrerit mauris non lacinia. Curabitur vitae ullamcorper est, ac tincidunt augue. Praesent ultrices vulputate ante, vel egestas orci dictum quis. Ut rutrum erat dui, ac hendrerit nulla scelerisque a. Aliquam leo velit, suscipit quis fermentum vel, gravida eu nunc. Curabitur convallis, augue gravida posuere elementum, risus metus posuere diam, id cursus eros purus ac turpis. Nullam nec mi turpis. Fusce et lobortis libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam feugiat faucibus interdum.',
 } as const;

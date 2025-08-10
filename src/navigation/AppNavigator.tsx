@@ -7,6 +7,7 @@ import { COLORS, LAYOUT, SCREENS, SCREEN_TITLES } from '../utils/constants';
 import ShouldHandleOrganicClicksScreen from '../screens/ShouldHandleOrganicClicksScreen';
 import GlobalSettingsScreen from '../screens/GlobalSettingsScreen';
 import { useIsFocused } from '@react-navigation/native';
+import DarkModeScreen from "../screens/DarkModeScreen.tsx";
 
 const Drawer = createDrawerNavigator();
 
@@ -67,6 +68,11 @@ const AppNavigator = () => {
         component={GlobalSettingsScreen}
         options={{ title: SCREEN_TITLES.GLOBAL_SETTINGS }}
       />
+        <Drawer.Screen
+            name={SCREENS.DARK_MODE}
+            component={DarkModeScreen}
+            options={{ title: SCREEN_TITLES.DARK_MODE }}
+        />
     </Drawer.Navigator>
   );
 };
