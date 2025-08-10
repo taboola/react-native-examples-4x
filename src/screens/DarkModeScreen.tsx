@@ -26,6 +26,15 @@ const CENTRE_FRANCE_MESSAGES = {
 };
 const SDK_TESTER_PUBLISHER = PUBLISHERS_PROPERTY[PublisherName.SDK_TESTER_RND];
 
+/**
+ * A screen that demonstrates local page dark mode implementation using TBLClassicPage.setPageExtraProperties().
+ * Creates TBLClassicUnitController manually instead of using useCreateUnit() hook
+ * to allow setting page properties (via setPageExtraProperties) before controller creation.
+ *
+ * @remarks
+ * For app-wide dark mode, use {@link Taboola.setGlobalExtraProperties} with
+ * `{darkMode: "true"|"false"}` instead.
+ */
 const DarkModeScreen = () => {
   const tblClassicPage = useMemo(
     () =>
@@ -44,6 +53,7 @@ const DarkModeScreen = () => {
   useEffect(() => {
     tblClassicPage?.setPageExtraProperties({darkMode: isDarkMode.toString()});
   }, [tblClassicPage, isDarkMode]);
+
 
   const createUnit = useCallback(async () => {
     const {placement, mode, placementType} =
