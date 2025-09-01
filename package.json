@@ -13,7 +13,7 @@
     "@react-native-picker/picker": "^2.11.0",
     "@react-navigation/drawer": "^7.3.12",
     "@react-navigation/native": "^7.1.9",
-    "@taboola/react-native-plugin-4x": "^4.0.2",
+    "@taboola/react-native-plugin-4x": "^4.0.4",
     "react": "19.0.0",
     "react-native": "0.79.2",
     "react-native-gesture-handler": "^2.27.2",

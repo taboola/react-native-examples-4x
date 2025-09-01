@@ -1953,7 +1953,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - Yoga
   - SocketRocket (0.7.1)
-  - TaboolaReactNativePlugin4x (4.0.2):
+  - TaboolaReactNativePlugin4x (4.0.4):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -2297,7 +2297,7 @@ SPEC CHECKSUMS:
   RNReanimated: 58913421548d14c690d0f29507c7caf0d965dd04
   RNScreens: fd709d812885ccf4fac5cb35389147c399c0f164
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
-  TaboolaReactNativePlugin4x: c9e9faf6d2007f17ada088beddb4d7a11fb75434
+  TaboolaReactNativePlugin4x: b9c6d821c2b44991c3338156f52479a41d6571bc
   TaboolaSDK: 72a5268957f354b24d98a3a2e07fc2cf0d6eb1b6
   Yoga: 9f110fc4b7aa538663cba3c14cbb1c335f43c13f
 
