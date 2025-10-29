@@ -10,7 +10,7 @@ import {
   Switch,
 } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
-import { Taboola, TBLLogLevel } from '@taboola/react-native-plugin-4x';
+import { Taboola, TBLLogLevel } from '@taboola/rnt-dev';
 import { styles } from '../styles/GlobalSettingsScreen.styles';
 import {
   MESSAGES,

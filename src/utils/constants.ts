@@ -1,4 +1,4 @@
-import { TBLPlacementType } from '@taboola/react-native-plugin-4x';
+import { TBLPlacementType } from '@taboola/rnt-dev';
 import { Platform } from 'react-native';
 
 export const COLORS = {

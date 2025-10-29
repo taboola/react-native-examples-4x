@@ -3,7 +3,7 @@ import {
   type TBLClassicListener,
   TBLClassicUnit,
   useCreateUnit,
-} from '@taboola/react-native-plugin-4x';
+} from '@taboola/rnt-dev';
 import { useMemo, useState, useCallback } from 'react';
 import {
   FlatList,

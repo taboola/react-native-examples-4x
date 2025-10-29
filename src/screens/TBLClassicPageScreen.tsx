@@ -2,7 +2,7 @@ import {
   Taboola,
   TBLClassicUnit,
   type TBLClassicListener,
-} from '@taboola/react-native-plugin-4x';
+} from '@taboola/rnt-dev';
 import { useState, useCallback } from 'react';
 import { ScrollView, Text, View, Button, Alert, Platform } from 'react-native';
 import baseStyles from '../styles/baseStyles';

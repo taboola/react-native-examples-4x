@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Taboola, TBLClassicPage } from '@taboola/react-native-plugin-4x';
+import { Taboola, TBLClassicPage } from '@taboola/rnt-dev';
 
 /**
  * Custom hook to handle Taboola cleanup on component unmount

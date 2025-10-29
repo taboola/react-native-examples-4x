@@ -4,7 +4,7 @@ import {
   TBLClassicUnit,
   Taboola,
   type TBLClassicListener,
-} from '@taboola/react-native-plugin-4x';
+} from '@taboola/rnt-dev';
 
 import {useTheme} from '@react-navigation/native';
 import {

@@ -3,7 +3,7 @@ import {
   type TBLClassicListener,
   TBLClassicUnit,
   useCreateUnit,
-} from '@taboola/react-native-plugin-4x';
+} from '@taboola/rnt-dev';
 import { useState, useCallback, useMemo } from 'react';
 import { Text, View, ScrollView } from 'react-native';
 import { OrganicClicksControls } from '../components/OrganicClicksControls';
