@@ -74,6 +74,7 @@ export const SCREENS = {
   SHOULD_HANDLE_ORGANIC_CLICKS_SCREEN: 'ShouldHandleOrganicClicksScreen',
   GLOBAL_SETTINGS: 'GlobalSettings',
   DARK_MODE: 'Dark Mode',
+  WEB_INTEGRATION: 'WebIntegration',
 };
 
 export const SCREEN_TITLES = {
@@ -84,6 +85,7 @@ export const SCREEN_TITLES = {
   SHOULD_HANDLE_ORGANIC_CLICKS_SCREEN: 'Should Handle OC Screen',
   GLOBAL_SETTINGS: 'Global Settings Screen',
   DARK_MODE: 'Dark Mode Screen',
+  WEB_INTEGRATION: 'Web Integration Screen',
 };
 
 export const PLACEMENT_PARAMS = {

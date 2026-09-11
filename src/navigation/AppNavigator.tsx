@@ -8,6 +8,7 @@ import ShouldHandleOrganicClicksScreen from '../screens/ShouldHandleOrganicClick
 import GlobalSettingsScreen from '../screens/GlobalSettingsScreen';
 import { useIsFocused } from '@react-navigation/native';
 import DarkModeScreen from "../screens/DarkModeScreen.tsx";
+import WebIntegrationScreen from '../screens/WebIntegrationScreen';
 
 const Drawer = createDrawerNavigator();
 
@@ -72,6 +73,11 @@ const AppNavigator = () => {
             name={SCREENS.DARK_MODE}
             component={DarkModeScreen}
             options={{ title: SCREEN_TITLES.DARK_MODE }}
+        />
+        <Drawer.Screen
+            name={SCREENS.WEB_INTEGRATION}
+            component={WebIntegrationScreen}
+            options={{ title: SCREEN_TITLES.WEB_INTEGRATION }}
         />
     </Drawer.Navigator>
   );
