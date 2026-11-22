@@ -11,7 +11,7 @@
     "postinstall": "patch-package"
   },
   "dependencies": {
-    "@react-native-picker/picker": "^2.11.4",
+    "@react-native-picker/picker": "^2.13.0",
     "@react-navigation/drawer": "^7.14.4",
     "@react-navigation/native": "^7.5.1",
     "@taboola/react-native-plugin-4x": "^4.0.12",

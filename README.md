@@ -48,7 +48,7 @@ npm install
 cd ios && npx react-native spm && cd ..
 ```
 
-> **iOS uses Swift Package Manager (experimental in React Native 0.88).** Open `ios/TaboolaReactNative4XExampleApp.xcodeproj` (there is no `.xcworkspace`). `ios/Podfile` is an empty stub: the React Native CLI needs it to find the iOS project, so keep it. `@react-native-picker/picker`, `react-native-screens` and `react-native-webview` don't ship a `Package.swift` yet, so this app keeps generated ones in `patches/`, applied automatically by `patch-package` on `npm install`. See React Native's [SwiftPM guide](https://github.com/facebook/react-native/blob/main/packages/react-native/scripts/spm/__docs__/spm-scripts.md).
+> **iOS uses Swift Package Manager (experimental in React Native 0.88).** Open `ios/TaboolaReactNative4XExampleApp.xcodeproj` (there is no `.xcworkspace`). `ios/Podfile` is an empty stub: the React Native CLI needs it to find the iOS project, so keep it. `react-native-screens` and `react-native-webview` don't ship a `Package.swift` yet, so this app keeps generated ones in `patches/`, applied automatically by `patch-package` on `npm install`. See React Native's [SwiftPM guide](https://github.com/facebook/react-native/blob/main/packages/react-native/scripts/spm/__docs__/spm-scripts.md).
 
 ### 2. Run the Sample App
 
