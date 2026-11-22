@@ -1,23 +1,16 @@
 import { NavigationContainer } from '@react-navigation/native';
-import { SafeAreaView, StyleSheet } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import AppNavigator from './navigation/AppNavigator';
 import type { FC } from 'react';
 
 const App: FC = () => {
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaProvider>
       <NavigationContainer>
         <AppNavigator />
       </NavigationContainer>
-    </SafeAreaView>
+    </SafeAreaProvider>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-});
 
 export default App;

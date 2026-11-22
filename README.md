@@ -29,8 +29,8 @@ This sample app showcases:
 Before running the sample app, make sure you have:
 
 - **React Native development environment** set up ([Setup Guide](https://reactnative.dev/docs/set-up-your-environment))
-- **Node.js** (version 18 or higher)
-- **iOS**: Xcode and CocoaPods installed
+- **Node.js** 22.13 or newer (React Native 0.88 requirement)
+- **iOS**: Xcode 16 or newer (the iOS app uses Swift Package Manager, no CocoaPods)
 - **Android**: Android Studio and SDK configured
 
 ## Quick Start
@@ -44,9 +44,11 @@ cd react-native-examples-4x
 # Install npm dependencies
 npm install
 
-# Install iOS dependencies (iOS only)
-cd ios && bundle exec pod install && cd ..
+# Set up the iOS Swift packages (iOS only, once after cloning — the SwiftPM equivalent of `pod install`)
+cd ios && npx react-native spm && cd ..
 ```
+
+> **iOS uses Swift Package Manager (experimental in React Native 0.88).** Open `ios/TaboolaReactNative4XExampleApp.xcodeproj` (there is no `.xcworkspace`). `ios/Podfile` is an empty stub: the React Native CLI needs it to find the iOS project, so keep it. `@react-native-picker/picker` and `react-native-screens` don't ship a `Package.swift` yet, so this app keeps generated ones in `patches/`, applied automatically by `patch-package` on `npm install`. See React Native's [SwiftPM guide](https://github.com/facebook/react-native/blob/main/packages/react-native/scripts/spm/__docs__/spm-scripts.md).
 
 ### 2. Run the Sample App
 

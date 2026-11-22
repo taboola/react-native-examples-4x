@@ -11,7 +11,7 @@ import DarkModeScreen from "../screens/DarkModeScreen.tsx";
 
 const Drawer = createDrawerNavigator();
 
-function UnmountOnBlur({ children }) {
+function UnmountOnBlur({ children }: { children: React.ReactElement }) {
   const isFocused = useIsFocused();
 
   if (!isFocused) {
