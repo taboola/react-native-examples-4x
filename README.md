@@ -18,7 +18,7 @@ The **Taboola React Native Plugin 4.x** introduces full support for the **React 
 ## Sample App Features
 
 This sample app showcases:
-- Multiple integration patterns (Feed, Widget, Classic Page)
+- Multiple integration patterns (Feed, Widget, Classic Page, Web Integration)
 - Custom click handling and organic content management
 - Dark mode configuration
 - Memory management best practices
@@ -48,7 +48,7 @@ npm install
 cd ios && npx react-native spm && cd ..
 ```
 
-> **iOS uses Swift Package Manager (experimental in React Native 0.88).** Open `ios/TaboolaReactNative4XExampleApp.xcodeproj` (there is no `.xcworkspace`). `ios/Podfile` is an empty stub: the React Native CLI needs it to find the iOS project, so keep it. `@react-native-picker/picker` and `react-native-screens` don't ship a `Package.swift` yet, so this app keeps generated ones in `patches/`, applied automatically by `patch-package` on `npm install`. See React Native's [SwiftPM guide](https://github.com/facebook/react-native/blob/main/packages/react-native/scripts/spm/__docs__/spm-scripts.md).
+> **iOS uses Swift Package Manager (experimental in React Native 0.88).** Open `ios/TaboolaReactNative4XExampleApp.xcodeproj` (there is no `.xcworkspace`). `ios/Podfile` is an empty stub: the React Native CLI needs it to find the iOS project, so keep it. `@react-native-picker/picker`, `react-native-screens` and `react-native-webview` don't ship a `Package.swift` yet, so this app keeps generated ones in `patches/`, applied automatically by `patch-package` on `npm install`. See React Native's [SwiftPM guide](https://github.com/facebook/react-native/blob/main/packages/react-native/scripts/spm/__docs__/spm-scripts.md).
 
 ### 2. Run the Sample App
 
@@ -102,6 +102,14 @@ The app includes several screens demonstrating different integration patterns:
 - Extra properties and advanced options
 - Dynamic placement configuration
 
+### 🌐 **Web Integration** (`WebIntegrationScreen.tsx`)
+- Publisher-owned `react-native-webview` with the Taboola bridge attached via `TBLWebviewWrapper`
+- Three-step usage: `Taboola.getWebPage()` → wrap the WebView → load the real content page inside `onWebviewRegistered`
+- Handles the iOS ordering caveat (start blank, then navigate)
+- Sample Taboola HTML page lives in `src/screens/webIntegration/taboolaPageHtml.ts` — in a real integration, this HTML comes from the publisher's CMS
+- Requires the New Architecture (TurboModules + Fabric) and `react-native-webview`
+- Full reference: [Web Integration (React Native Plugin 4.x)](https://tbla.atlassian.net/wiki/spaces/MOBILE/pages/813269024/Web+Integration+React+Native+Plugin+4.x)
+
 ## Key Files to Examine
 
 | File | Purpose |
@@ -110,6 +118,8 @@ The app includes several screens demonstrating different integration patterns:
 | `src/screens/TBLClassicPageScreen.tsx` | Widget integration within content |
 | `src/screens/ShouldHandleOrganicClicksScreen.tsx` | Custom click handling patterns |
 | `src/screens/GlobalSettingsScreen.tsx` | Configuration and settings examples |
+| `src/screens/WebIntegrationScreen.tsx` | Web Integration — attach Taboola bridge to a publisher-owned WebView |
+| `src/screens/webIntegration/taboolaPageHtml.ts` | Sample publisher HTML page with the Taboola tag |
 | `src/App.tsx` | Application entry point and Taboola initialization |
 
 ## Support
