@@ -282,7 +282,6 @@ function TaboolaFeedScreen() {
           onRefresh={() => widgetUnit?.refresh()}
           onReset={() => widgetUnit?.reset()}
         />
-        Feed Unit Controls
         <TaboolaUnitSettingsForm
           title="Feed Unit Controls"
           state={feedUnitState}

@@ -1,4 +1,6 @@
 import React from 'react';
+import { StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import TaboolaFeedScreen from '../screens/TaboolaFeedScreen';
 import HomeScreen from '../screens/HomeScreen';
@@ -12,7 +14,7 @@ import WebIntegrationScreen from '../screens/WebIntegrationScreen';
 
 const Drawer = createDrawerNavigator();
 
-function UnmountOnBlur({ children }) {
+function UnmountOnBlur({ children }: { children: React.ReactElement }) {
   const isFocused = useIsFocused();
 
   if (!isFocused) {
@@ -22,11 +24,21 @@ function UnmountOnBlur({ children }) {
   return children;
 }
 
+// The header and drawer apply their own safe-area insets, so only the screen
+// content (below the header) is padded here, on the edges the header doesn't cover.
+function ScreenLayout({ children }: { children: React.ReactElement }) {
+  return (
+    <SafeAreaView style={styles.screen} edges={['bottom', 'left', 'right']}>
+      <UnmountOnBlur>{children}</UnmountOnBlur>
+    </SafeAreaView>
+  );
+}
+
 const AppNavigator = () => {
   return (
     <Drawer.Navigator
       initialRouteName={SCREENS.HOME}
-      screenLayout={({ children }) => <UnmountOnBlur>{children}</UnmountOnBlur>}
+      screenLayout={ScreenLayout}
       detachInactiveScreens={true}
       screenOptions={{
         headerShown: true,
@@ -82,5 +94,11 @@ const AppNavigator = () => {
     </Drawer.Navigator>
   );
 };
+
+const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+  },
+});
 
 export default AppNavigator;
