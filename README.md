@@ -29,7 +29,7 @@ This sample app showcases:
 Before running the sample app, make sure you have:
 
 - **React Native development environment** set up ([Setup Guide](https://reactnative.dev/docs/set-up-your-environment))
-- **Node.js** 22.13 or newer (React Native 0.88 requirement)
+- **Node.js** `^22.13.0`, `^24.3.0` or `>= 26.0.0` (React Native 0.88 requirement)
 - **iOS**: Xcode 16 or newer (the iOS app uses Swift Package Manager, no CocoaPods)
 - **Android**: Android Studio and SDK configured
 
